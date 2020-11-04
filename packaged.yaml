@@ -1,0 +1,102 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: "trips Rest API to manage trips \n"
+Globals:
+  Function:
+    Timeout: 20
+    MemorySize: 512
+    Environment:
+      Variables:
+        TABLE_NAME:
+          Ref: tripsTable
+        ENDPOINT_OVERRIDE: ''
+Resources:
+  CreateTripsRecordFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: s3://test-lambda-jeff/8ea566668e6ef54bcbbcb240cc6d5f4f
+      Handler: br.com.iwe.handler.CreateTripsRecord::handleRequest
+      Runtime: java8
+      Policies:
+      - DynamoDBCrudPolicy:
+          TableName:
+            Ref: tripsTable
+      Events:
+        CreateTripsRecord:
+          Type: Api
+          Properties:
+            Path: /trips
+            Method: post
+  GetTripsRecordsByCityFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: s3://test-lambda-jeff/8ea566668e6ef54bcbbcb240cc6d5f4f
+      Handler: br.com.iwe.handler.GetTripsRecordsByCity::handleRequest
+      Runtime: java8
+      Policies:
+      - DynamoDBCrudPolicy:
+          TableName:
+            Ref: tripsTable
+      Events:
+        GetTripsRecordsByCity:
+          Type: Api
+          Properties:
+            Path: /trips/{country}/findByCity
+            Method: get
+            RequestParameters:
+            - method.request.querystring.city
+  GetTripsRecordsByCountryFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: s3://test-lambda-jeff/8ea566668e6ef54bcbbcb240cc6d5f4f
+      Handler: br.com.iwe.handler.GetTripsRecordsByCountry::handleRequest
+      Runtime: java8
+      Policies:
+      - DynamoDBCrudPolicy:
+          TableName:
+            Ref: tripsTable
+      Events:
+        GetTripsRecordsByCountry:
+          Type: Api
+          Properties:
+            Path: /trips/{country}
+            Method: get
+            RequestParameters:
+            - method.request.querystring.country
+  tripsTable:
+    Type: AWS::DynamoDB::Table
+    Properties:
+      TableName: trips
+      AttributeDefinitions:
+      - AttributeName: country
+        AttributeType: S
+      - AttributeName: city
+        AttributeType: S
+      KeySchema:
+      - AttributeName: country
+        KeyType: HASH
+      - AttributeName: city
+        KeyType: RANGE
+      LocalSecondaryIndexes:
+      - IndexName: cityIndex
+        KeySchema:
+        - AttributeName: country
+          KeyType: HASH
+        - AttributeName: city
+          KeyType: RANGE
+        Projection:
+          ProjectionType: ALL
+      BillingMode: PAY_PER_REQUEST
+Outputs:
+  CreateTripsRecordFunction:
+    Description: CreateTripsRecord Lambda Function ARN
+    Value:
+      Fn::GetAtt:
+      - CreateTripsRecordFunction
+      - Arn
+  GetTripsRecordsByCityFunction:
+    Description: GetTripsRecordsByCity Lambda Function ARN
+    Value:
+      Fn::GetAtt:
+      - GetTripsRecordsByCityFunction
+      - Arn

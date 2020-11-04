@@ -1,0 +1,8 @@
+/root/Lambda-apigateway-dynamodb/src/main/java/br/com/iwe/model/Trips.java
+/root/Lambda-apigateway-dynamodb/src/main/java/br/com/iwe/handler/CreateTripsRecord.java
+/root/Lambda-apigateway-dynamodb/src/main/java/br/com/iwe/dao/TripsRepository.java
+/root/Lambda-apigateway-dynamodb/src/main/java/br/com/iwe/handler/GetTripsRecordsByCountry.java
+/root/Lambda-apigateway-dynamodb/src/main/java/br/com/iwe/dao/DynamoDBManager.java
+/root/Lambda-apigateway-dynamodb/src/main/java/br/com/iwe/model/HandlerResponse.java
+/root/Lambda-apigateway-dynamodb/src/main/java/br/com/iwe/handler/GetTripsRecordsByCity.java
+/root/Lambda-apigateway-dynamodb/src/main/java/br/com/iwe/model/HandlerRequest.java
