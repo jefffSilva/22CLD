@@ -12,7 +12,8 @@ Hedipo Silva<br>
 Vinicius Sanfilippo<br>
 
 ## Project 
-Microservices and Severless 
+**Microservices and Severless** <br><br>
+
 
 ## AWS SAM Application for Managing Trips Data Lake
 
