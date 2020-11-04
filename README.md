@@ -54,12 +54,12 @@ mvn install
 
 This step will create a docker container that emulate a DynamoDB Local
 
-Pay Attention if you will have a problem with access table, you can use docker ip in a src/test/resources/test_environment_linux.json
+**Pay Attention if you will have a problem with access table, you can use docker ip in a src/test/resources/test_environment_linux.json**
 
 1. Start DynamoDB Local in a Docker container. `docker run -p 8000:8000 -v $(pwd)/local/dynamodb:/data/ amazon/dynamodb-local -jar DynamoDBLocal.jar -sharedDb -dbPath /data`
 
 
-# You'll make a new table from dynamodb for recive new data from API REST 
+**You'll make a new table from dynamodb for recive new data from API REST** 
 2. aws dynamodb create-table --table-name trips --attribute-definitions AttributeName=country,AttributeType=S AttributeName=city,AttributeType=S AttributeName=date,AttributeType=S AttributeName=reason,AttributeType=S --key-schema AttributeName=country,KeyType=HASH AttributeName=city,KeyType=RANGE --local-secondary-indexes 'IndexName=cityIndex,KeySchema=[{AttributeName=country,KeyType=HASH},{AttributeName=city,KeyType=RANGE}],Projection={ProjectionType=ALL}' --billing-mode PAY_PER_REQUEST --endpoint-url http://localhost:8000
 
 
