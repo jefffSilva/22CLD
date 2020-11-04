@@ -16,8 +16,10 @@ Microservices and Severless
 
 ## AWS SAM Application for Managing Trips Data Lake
 
+
 This project was created by group of course Cloud Computing
 The example projet used was https://github.com/iworks-education/study-datalake
+
 
 This is a sample application to demonstrate how to build an application on AWS Serverless Envinronment using the
 AWS SAM, Amazon API Gateway, AWS Lambda and Amazon DynamoDB.
@@ -50,8 +52,9 @@ mvn install
 
 **Invoking function locally through local API Gateway**
 
-# This step will create a docker container that emulate a DynamoDB Local
-# Attetion if you will have a problem with access table, you can use docker ip in a src/test/resources/test_environment_linux.json 
+This step will create a docker container that emulate a DynamoDB Local
+
+Pay Attention if you will have a problem with access table, you can use docker ip in a src/test/resources/test_environment_linux.json
 
 1. Start DynamoDB Local in a Docker container. `docker run -p 8000:8000 -v $(pwd)/local/dynamodb:/data/ amazon/dynamodb-local -jar DynamoDBLocal.jar -sharedDb -dbPath /data`
 
