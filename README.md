@@ -1,15 +1,15 @@
-Team 
+## Team 
 22CLD - 2020 
 Course: Cloud Computing 
 
-People
+## People
 Renan Miranda
 Jeferson Mendes 
 Thiago Cardoso
 Hedipo Silva
 Vinicius Sanfilippo
 
-Project 
+## Project 
 Microservices and Severless 
 
 ## AWS SAM Application for Managing Trips Data Lake
