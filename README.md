@@ -4,7 +4,7 @@ Course: Cloud Computing
 
 ## People
 Renan Miranda
-Jeferson Mendes 
+Jeferson Mendes
 Thiago Cardoso
 Hedipo Silva
 Vinicius Sanfilippo
