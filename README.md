@@ -17,14 +17,14 @@ Microservices and Severless
 ## AWS SAM Application for Managing Trips Data Lake
 
 
-This project was created by group of course Cloud Computing
-The example projet used was https://github.com/iworks-education/study-datalake
+This project was created by group of course Cloud Computing<br>
+The example projet used was https://github.com/iworks-education/study-datalake<br>
 
 
 This is a sample application to demonstrate how to build an application on AWS Serverless Envinronment using the
-AWS SAM, Amazon API Gateway, AWS Lambda and Amazon DynamoDB.
+AWS SAM, Amazon API Gateway, AWS Lambda and Amazon DynamoDB.<br>
 
-It also uses the DynamoDBMapper ORM structure to map trip items in a DynamoDB table to a RESTful API for managing trips.
+It also uses the DynamoDBMapper ORM structure to map trip items in a DynamoDB table to a RESTful API for managing trips.<br>
 
 
 ## Requirements
