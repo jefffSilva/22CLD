@@ -1,15 +1,15 @@
 ## Team 
 
-22CLD - 2020
-Course: Cloud Computing
+22CLD - 2020<br>
+Course: Cloud Computing<br>
 
 ## People
 
 Renan Miranda<br>
-Jeferson Mendes
-Thiago Cardoso
-Hedipo Silva
-Vinicius Sanfilippo
+Jeferson Mendes<br>
+Thiago Cardoso<br>
+Hedipo Silva<br>
+Vinicius Sanfilippo<br>
 
 ## Project 
 Microservices and Severless 
