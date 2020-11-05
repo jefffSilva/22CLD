@@ -61,7 +61,10 @@ This step will create a docker container that emulate a DynamoDB Local
 
 
 **You'll make a new table from dynamodb for recive new data from API REST** <br>
-2. aws dynamodb create-table --table-name trips --attribute-definitions AttributeName=country,AttributeType=S AttributeName=city,AttributeType=S AttributeName=date,AttributeType=S AttributeName=reason,AttributeType=S --key-schema AttributeName=country,KeyType=HASH AttributeName=city,KeyType=RANGE --local-secondary-indexes 'IndexName=cityIndex,KeySchema=[{AttributeName=country,KeyType=HASH},{AttributeName=city,KeyType=RANGE}],Projection={ProjectionType=ALL}' --billing-mode PAY_PER_REQUEST --endpoint-url http://localhost:8000
+
+```bash
+aws dynamodb create-table --table-name trips --attribute-definitions AttributeName=country,AttributeType=S AttributeName=city,AttributeType=S  --key-schema AttributeName=country,KeyType=HASH AttributeName=city,KeyType=RANGE --local-secondary-indexes 'IndexName=cityIndex,KeySchema=[{AttributeName=country,KeyType=HASH},{AttributeName=city,KeyType=RANGE}],Projection={ProjectionType=ALL}' --billing-mode PAY_PER_REQUEST --endpoint-url http://localhost:8000 --profile fiap
+```
 
 
 
