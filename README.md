@@ -65,7 +65,7 @@ This step will create a docker container that emulate a DynamoDB Local
 
 
 
-If the table already exist, you can delete: `aws dynamodb delete-table --table-name study --endpoint-url http://localhost:8000`
+If the table already exist, you can delete: `aws dynamodb delete-table --table-name trips --endpoint-url http://localhost:8000`
 
 3. Start the SAM local API.
  - On a Mac: `sam local start-api --env-vars src/test/resources/test_environment_mac.json`
@@ -77,8 +77,26 @@ OBS:  If you already have the container locally (in your case the java8), then y
 
 
 If the previous command ran successfully you should now be able to hit the following local endpoint to
-invoke the functions rooted at `http://localhost:3000/study/{topic}?starts=2020-01-02&ends=2020-02-02`.
-It shoud return 404. Now you can explore all endpoints, use the src/test/resources/Study DataLake.postman_collection.json to import a API Rest Collection into Postman.
+invoke the functions rooted at `http://localhost:3000/trips/`.
+
+you can use postman and curl client to send data for `http://localhost:3000/trips/` for it. 
+
+`curl -H "content-Type: application/json" -X POST -d \
+{ \
+    "country": "Mexico", \
+    "city": "Cancon"  \
+    "date": "2020-11-01 \
+    "reason": "work" \
+} \ 
+http://localhost:3000/trips/`
+
+**After you can use GET method for bring you trip by country**
+
+`curl http://localhost:3000/trips/Mexico` 
+
+
+
+It shoud return 404. Now you can explore all endpoints, use the src/test/resources/trips DataLake.postman_collection.json to import a API Rest Collection into Postman.
 
 
 **SAM CLI** is used to emulate both Lambda and API Gateway locally and uses our `template.yaml` to
