@@ -14,9 +14,6 @@ public class Trips {
 	@DynamoDBRangeKey(attributeName = "city")
 	private String city;
 
-//	@DynamoDBIndexRangeKey(attributeName = "date")
-//	private String date;
-
 	@DynamoDBAttribute(attributeName = "date")
 	private String date;
 	

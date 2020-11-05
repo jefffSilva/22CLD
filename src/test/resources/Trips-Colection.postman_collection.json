@@ -1,0 +1,87 @@
+{
+	"info": {
+		"_postman_id": "165a11e1-06c6-4eb0-a544-40b3580c0e66",
+		"name": "Trips Colection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "createTripsRecord",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"country\": \"Brasil\",\n    \"city\": \"SaoPaulo\",\n    \"date\": \"2015-06-05\",\n    \"reason\": \"Trabalho\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/trips",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"trips"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "findByCity",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/trips/Brasil/findByCity?city=SaoPaulo",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"trips",
+						"Brasil",
+						"findByCity"
+					],
+					"query": [
+						{
+							"key": "city",
+							"value": "SaoPaulo"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "findByCountry",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/trips/Brasil",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"trips",
+						"Brasil"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
